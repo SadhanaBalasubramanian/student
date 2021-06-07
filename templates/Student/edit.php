@@ -30,10 +30,14 @@
                             <table class="table"> 
                                <tr><td>  Name </td><td>:</td><td> <?php echo $this->Form->input('s_name');?></td></tr>
                                <tr><td>  Date of Birth </td><td>:</td><td> <?php echo $this->Form->date('s_dob'); ?></td></tr>
-                               <?php $options = ['1' =>'1', '2' =>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10']; 
-                                     $gender_options=['Male','Female']?>
+                               <?php $options = [1 =>1, 2 =>2,3=>3,4=>4,5=>5,6=>6,7=>7,8=>8,9=>9,10=>10]; 
+                                     $gender_options=['Male','Female']
+                                     ?>
                                 <tr><td>  Grade </td><td>:</td><td><?php echo $this->Form->select('s_class', $options); ?></td></tr>
-                                <tr><td>  Gender </td><td>:</td><td><?php echo $this->Form->radio('s_gender', $gender_options, ['label' => ['class' => 'radio_styl']]) ?></td></tr>
+                                <tr><td>  Gender </td><td>:</td><td><?php 
+                                      echo $this->Form->radio('s_gender',
+                                        [['value' => 'Male', 'text' => 'Male', 'label' => ['class' => 'radio_styl']],
+                                        ['value' => 'Female', 'text' => 'Female', 'label' => ['class' => 'radio_styl']],]); ?></td></tr>
                             </table>
                         </fieldset>
 

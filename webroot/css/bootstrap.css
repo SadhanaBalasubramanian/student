@@ -4153,7 +4153,7 @@ fieldset:disabled .btn {
   width: 10px; 
 }  
 .student_addfrm select{
-  width:30px;
+  width:100px;
   font-size:14px;
 }
 .nav {

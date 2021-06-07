@@ -36,10 +36,9 @@
                     <td><?= $age ?></td>                    
                     <td><?= h($student->s_gender) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $student->id]) ?></td>
-                       <td class="actions"> <?= $this->Html->link(__('Edit'), ['action' => 'edit', $student->id]) ?></td>
-                       <td class="actions"> <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $student->id], ['confirm' => __('Are you sure you want to delete # {0}?', $student->id)]) ?>
-                    </td>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $student->id]) ?></td>
+                    <td class="actions"> <?= $this->Html->link(__('Edit'), ['action' => 'edit', $student->id]) ?></td>
+                    <td class="actions"> <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $student->id], ['confirm' => __('Are you sure you want to delete # {0}?', $student->id)]) ?> </td>
                 </tr>
                 <?php endforeach; ?>
                 <?php } else { ?>
