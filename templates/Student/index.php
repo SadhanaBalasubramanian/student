@@ -13,11 +13,11 @@
     <div class="container-fluid">
         <table class="table table-hover">
             <thead>
-                <tr class="table-primary">
-                    <th><?= $this->Paginator->sort('id') ?></th>
+                <tr class="table-primary">                    
                     <th><?= $this->Paginator->sort('Name') ?></th>
-                    <th><?= $this->Paginator->sort('DOB') ?></th>
                     <th><?= $this->Paginator->sort('Grade') ?></th>
+                    <th><?= $this->Paginator->sort('DOB') ?></th>
+                    <th><?= $this->Paginator->sort('Age') ?></th>                    
                     <th><?= $this->Paginator->sort('Gender') ?></th>
                     <th class="actions text-center" colspan=3><?= __('Actions') ?></th>
                 </tr>
@@ -25,11 +25,15 @@
             <tbody>
             <?php if(!empty($student)){?>
                 <?php foreach ($student as $student): ?>
-                <tr>
-                    <td><?= $this->Number->format($student->id) ?></td>
+                <tr>                    
                     <td><?= h($student->s_name) ?></td>
-                    <td><?= h($student->s_dob) ?></td>
                     <td><?= $this->Number->format($student->s_class) ?></td>
+                    <td><?= h($student->s_dob) ?></td>
+                    <?php   
+                            $today = date("Y-m-d");
+                            $diff = date_diff(date_create($student->s_dob), date_create($today));
+                            $age=$diff->format('%y')?>
+                    <td><?= $age ?></td>                    
                     <td><?= h($student->s_gender) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $student->id]) ?></td>
